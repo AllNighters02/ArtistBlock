@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ArtistBlock</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">VJKjW8Rb0ZqPWgMfCMeEImIOwPCDHe1mnkNo2OFg</string>
+    <string name="back4app_client_key">7FrfVvgUzBFRBLfV13XlVuQE9QqdVGjARQLIkc3R</string>
+</resources>
