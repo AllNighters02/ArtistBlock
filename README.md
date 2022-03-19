@@ -1,4 +1,4 @@
-# Pictogram
+# ArtistBlock
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Pictogram is a drawing and photo sharing app that is similar to Instagram but using Parse as its backend.
+ArtistBlock is a drawing and photo sharing app that is similar to Instagram but using Parse as its backend.
 
 ### App Evaluation
 - **Category:** Social Networking and Drawing
@@ -26,7 +26,7 @@ Pictogram is a drawing and photo sharing app that is similar to Instagram but us
 * User can sign up to create a new account using Parse authentication.
 * User can log in and log out of his or her account.
 * The current signed in user is persisted across app restarts.
-* User can take a photo, add a caption, and post it to "Pictogram".
+* User can take a photo, add a caption, and post it to "ArtistBlock".
 * User picks what their favorite artist/art-style is. (Think Spotify interface)
 * Matches have a chat window to get to know each other, with the ability to unmatch (Tinder Style).
 * Profile pages for each user
