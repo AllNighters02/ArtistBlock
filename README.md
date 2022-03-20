@@ -73,7 +73,8 @@ Optional:
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+Figma Link: https://www.figma.com/file/c5gVX9FTBj7TCjdPJzdXXN/ArtistBlock?node-id=0%3A1
+<img src="https://github.com/AllNighters02/ArtistBlock/blob/main/figma.png" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
