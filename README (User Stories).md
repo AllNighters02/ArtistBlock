@@ -40,4 +40,4 @@ The following **additional** features are implemented:
 
 **Gifs**
 Set up Parse Server and Dashboard, Implementation of Login and Logout feature and created log in page:
-https://github.com/AllNighters02/ArtistBlock/blob/main/Log%20In.gif
+<img src='https://github.com/AllNighters02/ArtistBlock/blob/main/Log%20In.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
