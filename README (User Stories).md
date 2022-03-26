@@ -26,7 +26,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 - [ ] User sees app icon in home screen and styled bottom navigation view
-- [ ] Style the feed to look like the real Instagram feed.
+- [ ] Style the feed to look like wireframes, etc.
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [ ] Show the username and creation time for each post.
 - [ ] User can tap a post to view post details, including timestamp and caption.
@@ -37,7 +37,6 @@ The following **additional** features are implemented:
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
 
-- [ ] List anything else that you can get done to improve the app functionality!
 
 **Gifs**
 Set up Parse Server and Dashboard, Implementation of Login and Logout feature and created log in page:
