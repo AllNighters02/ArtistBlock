@@ -3,6 +3,7 @@
 The following **required** functionality is completed:
 
 - [X] User can sign up to create a new account using Parse authentication.
+- [X] Create Login Page
 - [X] User can log in and log out of his or her account.
 - [ ] Add features to Login Page
 - [ ] The current signed in user is persisted across app restarts.
@@ -16,9 +17,11 @@ The following **required** functionality is completed:
 - [ ] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
 
 
+
 The following **optional** features are implemented:
 - [ ] User sees app icon in home screen and styled bottom navigation view
 - [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
+
 
 
 The following **additional** features are implemented:
@@ -35,3 +38,7 @@ The following **additional** features are implemented:
 - [ ] User can like a post and see number of likes for each post in the post details screen.
 
 - [ ] List anything else that you can get done to improve the app functionality!
+
+**Gifs**
+Set up Parse Server and Dashboard, Implementation of Login and Logout feature and created log in page:
+
