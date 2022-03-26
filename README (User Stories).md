@@ -4,16 +4,16 @@ The following **required** functionality is completed:
 
 - [X] User can sign up to create a new account using Parse authentication.
 - [X] User can log in and log out of his or her account.
-- [] Add features to Login Page
-- [] The current signed in user is persisted across app restarts.
-- [] User can draw, add a caption, and post it to "Instagram".
-- [] User can view the last 20 posts submitted to "Instagram".
-- [] User can pull to refresh the last 20 posts submitted to "Instagram".
-- [] User Profile Page
-- [] Create Feed Activity Page
-- [] Add Bottom Navigation
-- [] Create Sign Up Page
-- [] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
+- [ ] Add features to Login Page
+- [ ] The current signed in user is persisted across app restarts.
+- [ ] User can draw, add a caption, and post it to "Instagram".
+- [ ] User can view the last 20 posts submitted to "Instagram".
+- [ ] User can pull to refresh the last 20 posts submitted to "Instagram".
+- [ ] User Profile Page
+- [ ] Create Feed Activity Page
+- [ ] Add Bottom Navigation
+- [ ] Create Sign Up Page
+- [ ] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
 
 
 The following **optional** features are implemented:
