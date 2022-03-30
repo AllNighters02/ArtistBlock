@@ -1,7 +1,10 @@
 package com.mihad.artistblock
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -10,6 +13,7 @@ import com.mihad.artistblock.Fragments.DrawingFragment
 import com.mihad.artistblock.Fragments.HomeFragment
 import com.mihad.artistblock.Fragments.ProfileFragment
 import com.mihad.artistblock.Fragments.SettingsFragment
+import com.parse.ParseUser
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,8 +57,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = R.id.action_home
-
-
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.logout, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.action_logout) {
+            ParseUser.logOut()
+            val currentUser = ParseUser.getCurrentUser()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

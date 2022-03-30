@@ -25,28 +25,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnSignup).setOnClickListener {
-            val username = findViewById<EditText>(R.id.etUsername).text.toString()
-            val password = findViewById<EditText>(R.id.etPassword).text.toString()
-            signUpUser(username, password)
-        }
-    }
-
-    private fun signUpUser(username: String, password: String) {
-        // Create the ParseUser
-        val user = ParseUser()
-
-        // Set fields for the user to be created
-        user.setUsername(username)
-        user.setPassword(password)
-
-        user.signUpInBackground { e ->
-            if (e == null) {
-                // Hooray! Let them use the app now.
-            } else {
-                // Sign up didn't succeed. Look at the ParseException
-                // to figure out what went wrong
-                e.printStackTrace()
-            }
+            goToSignUpActivity()
         }
     }
 
@@ -68,8 +47,23 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
+    private fun goToSignUpActivity() {
+        //
+        try {
+            val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intent)
+            Log.i(TAG2, "going to signup")
+        } catch (e: Exception) {
+            Log.e(TAG2, "Failed")
+            e.printStackTrace()
+        }
+        //Log.i(TAG2, "successfully went to signup")
+        //finish()
+    }
+
     companion object {
         const val TAG = "LoginActivity"
+        const val TAG2 = "SignUpActivity"
     }
 
 }
