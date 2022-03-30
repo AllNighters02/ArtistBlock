@@ -130,14 +130,14 @@ The following **required** functionality is completed:
 - [X] User can log in and log out of his or her account.
 - [ ] Add features to Login Page
 - [ ] The current signed in user is persisted across app restarts.
-- [ ] User can draw, add a caption, and post it to "Instagram".
-- [ ] User can view the last 20 posts submitted to "Instagram".
-- [ ] User can pull to refresh the last 20 posts submitted to "Instagram".
+- [ ] User can draw, add a caption, and post it to "ArtistBlock".
+- [ ] User can view the last 20 posts submitted to "ArtistBlock".
+- [ ] User can pull to refresh the last 20 posts submitted to "ArtistBlock".
 - [ ] User Profile Page
 - [ ] Create Feed Activity Page
-- [ ] Add Bottom Navigation
-- [ ] Create Sign Up Page
-- [ ] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
+- [X] Add Bottom Navigation
+- [X] Create Sign Up Page
+- [X] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
 
 
 
