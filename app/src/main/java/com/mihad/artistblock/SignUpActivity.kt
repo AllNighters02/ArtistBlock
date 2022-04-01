@@ -14,7 +14,9 @@ class SignUpActivity  : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-
+        if (ParseUser.getCurrentUser() != null) {
+            goToMainActivity()
+        }
         findViewById<Button>(R.id.btnSignup).setOnClickListener {
             val username = findViewById<EditText>(R.id.etUsername).text.toString()
             val password = findViewById<EditText>(R.id.etPassword).text.toString()
@@ -28,7 +30,7 @@ class SignUpActivity  : AppCompatActivity()  {
 
     private fun signUpUser(username: String, password: String, email: String) {
         // Create the ParseUser
-        val user = User()
+        val user = ParseUser()
 
         // Set fields for the user to be created
         user.setUsername(username)
@@ -38,7 +40,7 @@ class SignUpActivity  : AppCompatActivity()  {
 
         user.signUpInBackground { e ->
             if (e == null) {
-                // Hooray! Let them use the app now.
+                //goToMainActivity()
             } else {
                 // Sign up didn't succeed. Look at the ParseException
                 // to figure out what went wrong

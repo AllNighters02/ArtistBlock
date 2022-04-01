@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class PostAdapter(val context: Context, val posts:List<Post>)
     : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
@@ -30,22 +31,22 @@ class PostAdapter(val context: Context, val posts:List<Post>)
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val tvUsername: TextView
-        val ivImage: ImageView
+        val tvUserName: TextView
+        val ivPicture: ImageView
         val tvDescription: TextView
 
 
         init {
-            tvUsername = itemView.findViewById(R.id.tvUserName)
-            ivImage = itemView.findViewById(R.id.ivImage)
+            tvUserName = itemView.findViewById(R.id.tvUserName)
+            ivPicture = itemView.findViewById(R.id.ivPicture)
             tvDescription = itemView.findViewById(R.id.tvDescription)
         }
 
         fun bind(post: Post){
             tvDescription.text = post.getDescription()
-            tvUsername.text = post.getUser()?.username
+            tvUserName.text = post.getUser()?.username
 
-            Glide.with(itemView.context).load(post.getImage()?.url).into(ivImage)
+            Glide.with(itemView.context).load(post.getImage()?.url).into(ivPicture)
         }
     }
 }

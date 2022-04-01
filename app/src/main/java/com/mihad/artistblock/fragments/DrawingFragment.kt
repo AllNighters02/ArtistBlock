@@ -1,4 +1,4 @@
-package com.mihad.artistblock.Fragments
+package com.mihad.artistblock.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

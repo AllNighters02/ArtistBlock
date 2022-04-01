@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.mihad.artistblock.Fragments.DrawingFragment
-import com.mihad.artistblock.Fragments.HomeFragment
-import com.mihad.artistblock.Fragments.ProfileFragment
-import com.mihad.artistblock.Fragments.SettingsFragment
+import com.mihad.artistblock.fragments.DrawingFragment
+import com.mihad.artistblock.fragments.HomeFragment
+import com.mihad.artistblock.fragments.ProfileFragment
+import com.mihad.artistblock.fragments.SettingsFragment
 import com.parse.ParseUser
 
 class MainActivity : AppCompatActivity() {
