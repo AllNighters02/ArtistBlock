@@ -132,7 +132,7 @@ The following **required** functionality is completed:
 - [X] The current signed in user is persisted across app restarts.
 - [ ] User can draw, add a caption, and post it to "ArtistBlock".
 - [ ] User can view the last 20 posts submitted to "ArtistBlock".
-- [ ] User can pull to refresh the last 20 posts submitted to "ArtistBlock".
+- [X] User can pull to refresh the last 20 posts submitted to "ArtistBlock".
 - [ ] User Profile Page
 - [X] Create Feed Activity Page
 - [X] Add Bottom Navigation
