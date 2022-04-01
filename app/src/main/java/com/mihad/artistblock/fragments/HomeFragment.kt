@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.mihad.artistblock.Post
 import com.mihad.artistblock.PostAdapter
 import com.mihad.artistblock.R
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
 
     var allPosts: MutableList<Post> = mutableListOf()
 
-//    private lateinit var swipe : SwipeRefreshLayout
+    private lateinit var swipe : SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,13 +44,13 @@ class HomeFragment : Fragment() {
 
         postsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-//        swipe = view.findViewById(R.id.swipe)
-//        swipe.setOnRefreshListener {
-//            clear()
-//            queryPosts()
-//            adapter.notifyDataSetChanged()
-//
-//        }
+        swipe = view.findViewById(R.id.swipe)
+        swipe.setOnRefreshListener {
+            clear()
+            queryPosts()
+            adapter.notifyDataSetChanged()
+
+        }
 
         queryPosts()
     }
@@ -59,10 +60,10 @@ class HomeFragment : Fragment() {
         // Specify which class to query
         val query: ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
 
-//        if(swipe.isRefreshing){
-//            swipe.isRefreshing = false
-//
-//        }
+        if(swipe.isRefreshing){
+            swipe.isRefreshing = false
+
+        }
 
         // Finds all Post Objects in our server
         query.include(Post.KEY_USER)

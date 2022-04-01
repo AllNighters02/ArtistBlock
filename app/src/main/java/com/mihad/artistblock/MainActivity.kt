@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mihad.artistblock.fragments.DrawingFragment
 import com.mihad.artistblock.fragments.HomeFragment
@@ -16,6 +17,9 @@ import com.mihad.artistblock.fragments.SettingsFragment
 import com.parse.ParseUser
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var swipe : SwipeRefreshLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
