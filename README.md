@@ -130,7 +130,6 @@ The following **required** functionality is completed:
 - [X] User can log in and log out of his or her account.
 - [ ] Add features to Login Page
 - [X] The current signed in user is persisted across app restarts.
-- [x] User can take a picture of their artwork, add a caption, and post it to "ArtistBlock"
 - [ ] User can draw, add a caption, and post it to "ArtistBlock".
 - [x] User can view the last 20 posts submitted to "ArtistBlock".
 - [X] User can pull to refresh the last 20 posts submitted to "ArtistBlock".
@@ -165,4 +164,7 @@ The following **additional** features are implemented:
 **Gifs**
 Set up Parse Server and Dashboard, Implementation of Login and Logout feature and created log in page:
 <img src='https://github.com/AllNighters02/ArtistBlock/blob/main/Log%20In.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Set up home feed, bottom navigation, sign up page, and implemented a basic structure for our drawing fragment as well:
+<img src='https://github.com/AllNighters02/ArtistBlock/blob/main/walkthrough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
