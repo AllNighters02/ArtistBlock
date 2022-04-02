@@ -16,14 +16,14 @@ import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
 
-class HomeFragment : Fragment() {
+open class HomeFragment : Fragment() {
     lateinit var postsRecyclerView: RecyclerView
 
     lateinit var adapter: PostAdapter
 
     var allPosts: MutableList<Post> = mutableListOf()
 
-    private lateinit var swipe : SwipeRefreshLayout
+    lateinit var swipe : SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
