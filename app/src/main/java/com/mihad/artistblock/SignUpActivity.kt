@@ -36,7 +36,6 @@ class SignUpActivity  : AppCompatActivity()  {
         user.setUsername(username)
         user.setPassword(password)
         user.setEmail(email)
-        //user.setProfilePic(profilePic)
 
         user.signUpInBackground { e ->
             if (e == null) {

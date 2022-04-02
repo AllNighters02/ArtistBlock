@@ -6,16 +6,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.mihad.artistblock.MainActivity
-import com.mihad.artistblock.Post
-import com.mihad.artistblock.R
+import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide.init
+import com.mihad.artistblock.*
 import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
 import com.parse.ParseUser
 
-class ProfileFragment : HomeFragment() {
+class ProfileFragment : Fragment() {
+
+    lateinit var tvUsername : TextView
+    lateinit var tvDescription: TextView
+    lateinit var ivProfile: ImageView
+
+    lateinit var postsRecyclerView: RecyclerView
+
+    lateinit var adapter: PostAdapter
+
+    var allPosts: MutableList<Post> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,14 +39,37 @@ class ProfileFragment : HomeFragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
-    override fun queryPosts() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // This is where we're going to set up our views and click listeners
+        postsRecyclerView = view.findViewById(R.id.PostRecyclerView)
+
+        tvUsername = view.findViewById(R.id.tvUsername)
+        tvDescription = view.findViewById(R.id.tvDescription)
+        ivProfile = view.findViewById(R.id.ivProfile)
+
+        adapter = PostAdapter(requireContext(), allPosts)
+        postsRecyclerView.adapter = adapter
+
+        postsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val queryUser = ParseUser.getCurrentUser()
+
+        if(queryUser != null) {
+            tvUsername.text = queryUser.username
+            tvDescription.text = queryUser.get("aboutMe").toString()
+
+            context?.let { Glide.with(it).load(queryUser.getParseFile("profilePic")?.url).into(ivProfile) }
+        }
+
+        queryPosts()
+    }
+
+    fun queryPosts() {
         // Specify which class to query
         val query: ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
 
-        if(swipe.isRefreshing){
-            swipe.isRefreshing = false
-
-        }
         // Finds all Post Objects in our server
         query.include(Post.KEY_USER)
         query.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser())
@@ -51,6 +88,7 @@ class ProfileFragment : HomeFragment() {
                                         post.getUser()?.username
                             )
                         }
+
                         allPosts.addAll(posts)
                         adapter.notifyDataSetChanged()
                     }
