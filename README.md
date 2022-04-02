@@ -130,8 +130,9 @@ The following **required** functionality is completed:
 - [X] User can log in and log out of his or her account.
 - [ ] Add features to Login Page
 - [X] The current signed in user is persisted across app restarts.
+- [x] User can take a picture of their artwork, add a caption, and post it to "ArtistBlock"
 - [ ] User can draw, add a caption, and post it to "ArtistBlock".
-- [ ] User can view the last 20 posts submitted to "ArtistBlock".
+- [x] User can view the last 20 posts submitted to "ArtistBlock".
 - [X] User can pull to refresh the last 20 posts submitted to "ArtistBlock".
 - [ ] User Profile Page
 - [X] Create Feed Activity Page
