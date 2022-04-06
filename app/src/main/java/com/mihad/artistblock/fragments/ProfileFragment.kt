@@ -27,7 +27,7 @@ class ProfileFragment : Fragment() {
 
     lateinit var postsRecyclerView: RecyclerView
 
-    lateinit var adapter: PostAdapter
+    lateinit var adapter: ProfilePostAdapter
 
     var allPosts: MutableList<Post> = mutableListOf()
 
@@ -49,7 +49,7 @@ class ProfileFragment : Fragment() {
         tvDescription = view.findViewById(R.id.tvDescription)
         ivProfile = view.findViewById(R.id.ivProfile)
 
-        adapter = PostAdapter(requireContext(), allPosts)
+        adapter = ProfilePostAdapter(requireContext(), allPosts)
         postsRecyclerView.adapter = adapter
 
         postsRecyclerView.layoutManager = LinearLayoutManager(requireContext())

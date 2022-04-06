@@ -9,7 +9,6 @@
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="Nafisa"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -28,8 +27,7 @@
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
