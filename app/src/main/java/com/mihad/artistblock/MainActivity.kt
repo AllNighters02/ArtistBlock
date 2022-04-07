@@ -35,22 +35,22 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.action_home -> {
                     fragmentToShow = HomeFragment()
-
+                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                 }
 
                 R.id.action_drawing -> {
                     fragmentToShow = DrawingFragment()
-
+                    Toast.makeText(this, "Draw", Toast.LENGTH_SHORT).show()
                 }
 
                 R.id.action_profile -> {
                     fragmentToShow = ProfileFragment()
-
+                    Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 }
 
                 R.id.action_settings -> {
                     fragmentToShow = SettingsFragment()
-
+                    Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                 }
             }
             if (fragmentToShow != null) {
@@ -77,5 +77,9 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val TAG = "MainActivity"
     }
 }
