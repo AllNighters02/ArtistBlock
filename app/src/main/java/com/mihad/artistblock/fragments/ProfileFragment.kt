@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -52,7 +53,7 @@ class ProfileFragment : Fragment() {
         adapter = ProfilePostAdapter(requireContext(), allPosts)
         postsRecyclerView.adapter = adapter
 
-        postsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        postsRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
         val queryUser = ParseUser.getCurrentUser()
 
