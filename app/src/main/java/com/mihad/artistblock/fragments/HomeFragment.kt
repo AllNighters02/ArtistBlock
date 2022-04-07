@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
 
     var allPosts: MutableList<Post> = mutableListOf()
 
-    private lateinit var swipe : SwipeRefreshLayout
+    lateinit var swipe : SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
     }
 
     // Query for all posts in our server
-    open fun queryPosts() {
+    fun queryPosts() {
         // Specify which class to query
         val query: ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
 

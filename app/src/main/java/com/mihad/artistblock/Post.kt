@@ -36,6 +36,7 @@ class Post : ParseObject() {
         put(KEY_USER, parseUser)
     }
 
+
     companion object {
         const val KEY_DESCRIPTION = "description"
         const val KEY_IMAGE = "image"
