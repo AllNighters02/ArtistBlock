@@ -26,6 +26,7 @@ class SettingsFragment : Fragment() {
     lateinit var ivProfileCurrent: ImageView
     lateinit var tvUsernameCurrent: TextView
     lateinit var etNewUsername: EditText
+    lateinit var etNewPassword: EditText
     lateinit var etNewBio: EditText
     lateinit var saveBtn: Button
     lateinit var tvAboutMeCurr: TextView
@@ -44,6 +45,7 @@ class SettingsFragment : Fragment() {
         ivProfileCurrent = view.findViewById(R.id.ivProfileCurrent)
         tvUsernameCurrent = view.findViewById(R.id.tvUsernameCurrent)
         etNewUsername = view.findViewById(R.id.etNewUsername)
+        etNewPassword = view.findViewById(R.id.etNewPassword)
         etNewBio = view.findViewById(R.id.etNewBio)
         saveBtn = view.findViewById(R.id.saveBtn)
         tvAboutMeCurr = view.findViewById(R.id.tvAboutMeCurr)
@@ -52,13 +54,19 @@ class SettingsFragment : Fragment() {
 
         saveBtn.setOnClickListener {
             val newUsername = etNewUsername.text.toString()
+            val newPassword = etNewPassword.text.toString()
             val newBio = etNewBio.text.toString()
 
-            currUser.username = newUsername
-            currUser.setUsername(newUsername)
-
-            currUser.put("aboutMe", newBio)
-
+            if(newUsername != "") {
+                currUser.username = newUsername
+                currUser.setUsername(newUsername)
+            }
+            if(newPassword != "") {
+                currUser.setPassword(newPassword)
+            }
+            if (newBio != "") {
+                currUser.put("aboutMe", newBio)
+            }
             currUser.saveInBackground()
         }
 
