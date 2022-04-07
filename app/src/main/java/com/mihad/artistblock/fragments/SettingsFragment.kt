@@ -72,9 +72,13 @@ class SettingsFragment : Fragment() {
 
         if (currUser != null) {
             tvUsernameCurrent.text = currUser.username
+
             tvAboutMeCurr.text = currUser.get("aboutMe").toString()
-            context?.let {
-                Glide.with(it).load(currUser.getParseFile("profilePic")?.url).into(ivProfileCurrent)
+
+            if(currUser.getParseFile("profilePic")?.url != null) {
+                context?.let {
+                    Glide.with(it).load(currUser.getParseFile("profilePic")?.url).into(ivProfileCurrent)
+                }
             }
         }
     }

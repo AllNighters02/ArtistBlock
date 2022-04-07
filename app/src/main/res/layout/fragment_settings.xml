@@ -16,19 +16,19 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/ic_baseline_person_24"
+        tools:src="@tools:sample/avatars"
+        tools:srcCompat="@drawable/ic_baseline_person_24" />
 
     <TextView
         android:id="@+id/tvUsernameCurrent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="20dp"
-        android:textStyle="bold"
         android:text="Username"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivProfileCurrent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,11 +123,12 @@
         android:layout_margin="10dp"
         android:ellipsize="end"
         android:inputType="textMultiLine"
+        android:textAlignment="center"
         android:maxLines="3"
         android:text="About me"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivProfileCurrent"
+        app:layout_constraintStart_toEndOf="@id/ivProfileCurrent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsernameCurrent" />
 
     <Button

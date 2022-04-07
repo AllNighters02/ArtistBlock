@@ -60,7 +60,9 @@ class ProfileFragment : Fragment() {
             tvUsername.text = queryUser.username
             tvDescription.text = queryUser.get("aboutMe").toString()
 
-            context?.let { Glide.with(it).load(queryUser.getParseFile("profilePic")?.url).into(ivProfile) }
+            if (queryUser.getParseFile("profilePic")?.url != null) {
+                context?.let { Glide.with(it).load(queryUser.getParseFile("profilePic")?.url).into(ivProfile) }
+            }
         }
 
         queryPosts()
