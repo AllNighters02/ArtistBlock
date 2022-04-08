@@ -128,12 +128,12 @@ The following **required** functionality is completed:
 - [X] User can sign up to create a new account using Parse authentication.
 - [X] Create Login Page
 - [X] User can log in and log out of his or her account.
-- [ ] Add features to Login Page
+- [X] Add features to Login Page
 - [X] The current signed in user is persisted across app restarts.
-- [ ] User can draw, add a caption, and post it to "ArtistBlock".
+- [X] User can draw, add a caption, and post it to "ArtistBlock".
 - [x] User can view the last 20 posts submitted to "ArtistBlock".
 - [X] User can pull to refresh the last 20 posts submitted to "ArtistBlock".
-- [ ] User Profile Page
+- [X] User Profile Page
 - [X] Create Feed Activity Page
 - [X] Add Bottom Navigation
 - [X] Create Sign Up Page
