@@ -34,19 +34,28 @@ class PostAdapter(val context: Context, val posts:List<Post>)
         val tvUserName: TextView
         val ivPicture: ImageView
         val tvDescription: TextView
+        val ivProfilePic: ImageView
+        val tvLikes: TextView
+        val tvCreatedAt: TextView
 
 
         init {
             tvUserName = itemView.findViewById(R.id.tvUserName)
             ivPicture = itemView.findViewById(R.id.ivPicture)
             tvDescription = itemView.findViewById(R.id.tvDescription)
+            ivProfilePic = itemView.findViewById(R.id.ivProfilePic)
+            tvLikes = itemView.findViewById(R.id.tvLikes)
+            tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt)
         }
 
         fun bind(post: Post){
             tvDescription.text = post.getDescription()
             tvUserName.text = post.getUser()?.username
+            tvLikes.text = post.getNumber("likes").toString()
+            tvCreatedAt.text = TimeFormatter.getTimeDifference((post.createdAt).toString())
 
             Glide.with(itemView.context).load(post.getImage()?.url).into(ivPicture)
+            Glide.with(itemView.context).load(post.getUser()?.getParseFile("profilePic")?.url).into(ivProfilePic)
         }
     }
 }
