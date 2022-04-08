@@ -2,21 +2,21 @@ package com.mihad.artistblock.fragments
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.ImageDecoder
-import android.net.Uri
-import android.os.Build
+import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.mihad.artistblock.R
+import com.parse.ParseFile
 import com.parse.ParseUser
-import java.io.IOException
+import java.nio.ByteBuffer
 
 
 class SettingsFragment : Fragment() {
@@ -53,8 +53,9 @@ class SettingsFragment : Fragment() {
         val currUser = ParseUser.getCurrentUser()
 
         btnChange.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivity(intent)
+//            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//            startActivity(intent)
+              pickImageGallery()
         }
 
         saveBtn.setOnClickListener {
@@ -65,6 +66,7 @@ class SettingsFragment : Fragment() {
             if(newUsername != "") {
                 currUser.username = newUsername
                 currUser.setUsername(newUsername)
+
             }
             if(newPassword != "") {
                 currUser.setPassword(newPassword)
@@ -73,6 +75,7 @@ class SettingsFragment : Fragment() {
                 currUser.put("aboutMe", newBio)
             }
             currUser.saveInBackground()
+            refresh()
         }
 
         if (currUser != null) {
@@ -88,36 +91,62 @@ class SettingsFragment : Fragment() {
         }
     }
 
+    private fun pickImageGallery(){
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_REQUEST_CODE)
+    }
+
+    private fun refresh(){
+        val currUser = ParseUser.getCurrentUser()
+        tvUsernameCurrent.text = currUser.username
+        tvAboutMeCurr.text = currUser.get("aboutMe").toString()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK && data != null) {
-            val selectedImageUri : Uri? = data.data
-            val selectedImage : Bitmap = loadFromUri(selectedImageUri)
-            val ivProfile : ImageView = requireView().findViewById(R.id.ivProfileCurrent)
-            ivProfile.setImageBitmap(selectedImage)
-        }
-    }
+        if(requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK){
 
-    private fun loadFromUri(photoUri: Uri?): Bitmap {
-        var image: Bitmap? = null
-        try {
-            // check version of Android on device
-            image = if (Build.VERSION.SDK_INT > 27) {
-                // on newer versions of Android, use the new decodeBitmap method
-                val source = ImageDecoder.createSource(
-                    requireActivity().contentResolver,
-                    photoUri!!
-                )
-                ImageDecoder.decodeBitmap(source)
-            } else {
-                // support older versions of Android by using getBitmap
-                MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, photoUri)
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
+            ivProfileCurrent.setImageURI(data?.data)
+
         }
-        return image!!
+
     }
 
 
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (resultCode == RESULT_OK && data != null) {
+//            val selectedImageUri : Uri? = data?.data
+//            val selectedImage : Bitmap = loadFromUri(selectedImageUri)
+//            val ivProfile : ImageView = requireView().findViewById(R.id.ivProfileCurrent)
+//            ivProfile.setImageBitmap(selectedImage)
+//        }
+//    }
+
+//    private fun loadFromUri(photoUri: Uri?): Bitmap {
+//        var image: Bitmap? = null
+//        try {
+//            // check version of Android on device
+//            image = if (Build.VERSION.SDK_INT > 27) {
+//                // on newer versions of Android, use the new decodeBitmap method
+//                val source = ImageDecoder.createSource(
+//                    requireActivity().contentResolver,
+//                    photoUri!!
+//                )
+//                ImageDecoder.decodeBitmap(source)
+//            } else {
+//                // support older versions of Android by using getBitmap
+//                MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, photoUri)
+//            }
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+//        return image!!
+//    }
+
+    companion object {
+        const val TAG = "SettingsFragment"
+        val IMAGE_REQUEST_CODE = 100
+    }
 }
