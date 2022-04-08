@@ -10,33 +10,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="@font/open_sans"
         android:text="Nafisa"
+        android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:fontFamily="monospace"
         app:layout_constraintStart_toEndOf="@id/ivProfilePic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDescription"
-        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:fontFamily="monospace"
-        android:textColor="@color/black"
+        android:fontFamily="@font/open_sans"
         android:text="This is a great post!"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/ivPicture"
-        app:layout_constraintTop_toBottomOf="@id/ivProfilePic"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProfilePic" />
 
     <ImageView
         android:id="@+id/ivPicture"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDescription"
@@ -86,9 +86,10 @@
     <View
         android:id="@+id/divider3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@id/ivPicture"
+        app:layout_constraintBottom_toTopOf="@id/ivLike"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -96,7 +97,7 @@
     <View
         android:id="@+id/divider4"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@id/tvDescription"
         app:layout_constraintBottom_toTopOf="@id/ivPicture"
