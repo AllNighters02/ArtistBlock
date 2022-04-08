@@ -2,6 +2,7 @@ package com.mihad.artistblock.fragments
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +12,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.drawToBitmap
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.mihad.artistblock.R
 import com.parse.ParseFile
 import com.parse.ParseUser
+import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
 
 
@@ -108,6 +111,24 @@ class SettingsFragment : Fragment() {
         if(requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK){
 
             ivProfileCurrent.setImageURI(data?.data)
+
+            val bitmap = ivProfileCurrent.drawToBitmap()
+
+            val user = ParseUser.getCurrentUser()
+
+            // Convert it to byte
+            // Convert it to byte
+            val stream = ByteArrayOutputStream()
+            // Compress image to lower quality scale 1 - 100
+            // Compress image to lower quality scale 1 - 100
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+            val image: ByteArray = stream.toByteArray()
+
+            // Create the ParseFile
+            val file = ParseFile("androidbegin.png", image)
+
+            user.put("profilePic", file)
+            user.saveInBackground()
 
         }
 
