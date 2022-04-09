@@ -63,7 +63,10 @@ class PostAdapter(val context: Context, val posts:List<Post>)
             tvCreatedAt.text = TimeFormatter.getTimeDifference((post.createdAt).toString())
 
             Glide.with(itemView.context).load(post.getImage()?.url).into(ivPicture)
-            Glide.with(itemView.context).load(post.getUser()?.getParseFile("profilePic")?.url).into(ivProfilePic)
+            if (post.getUser()?.getParseFile("profilePic")!=null) {
+                Glide.with(itemView.context).load(post.getUser()?.getParseFile("profilePic")?.url)
+                    .into(ivProfilePic)
+            }
 
             ivLike.setOnClickListener {
                 ivLike.setColorFilter(Color.BLUE)
