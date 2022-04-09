@@ -108,6 +108,10 @@ class DrawingFragment : Fragment() {
             post.setImage(file)
             post.setUser(ParseUser.getCurrentUser())
             post.saveInBackground()
+
+            pathList.clear()
+            colorList.clear()
+            path.reset()
         }
 
     }

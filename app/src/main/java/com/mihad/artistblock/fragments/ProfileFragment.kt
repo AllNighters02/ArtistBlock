@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
 
     lateinit var adapter: ProfilePostAdapter
 
-    var allPosts: MutableList<Post> = mutableListOf()
+    var allPosts: ArrayList<Post> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
