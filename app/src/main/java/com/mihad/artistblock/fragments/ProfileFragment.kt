@@ -59,7 +59,10 @@ class ProfileFragment : Fragment() {
 
         if(queryUser != null) {
             tvUsername.text = queryUser.username
-            tvDescription.text = queryUser.get("aboutMe").toString()
+
+            if(queryUser.get("aboutMe") != null) {
+                tvDescription.text = queryUser.get("aboutMe").toString()
+            }
 
             if (queryUser.getParseFile("profilePic")?.url != null) {
                 context?.let { Glide.with(it).load(queryUser.getParseFile("profilePic")?.url).into(ivProfile) }

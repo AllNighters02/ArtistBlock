@@ -45,20 +45,29 @@ class DrawingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Inflate the layout for this fragment
-        val whiteBtn = view.findViewById<ImageButton>(R.id.whiteBtn)
+        val clearBtn = view.findViewById<ImageButton>(R.id.clearBtn)
+        val eraseBtn = view.findViewById<ImageButton>(R.id.eraseBtn)
         val blackBtn = view.findViewById<ImageButton>(R.id.blackBtn)
         val redBtn = view.findViewById<ImageButton>(R.id.redBtn)
         val greenBtn = view.findViewById<ImageButton>(R.id.greenBtn)
         val blueBtn = view.findViewById<ImageButton>(R.id.blueBtn)
+        val yellowBtn = view.findViewById<ImageButton>(R.id.yellowBtn)
+        val purpleBtn  =view.findViewById<ImageButton>(R.id.purpleBtn)
+        val orangeBtn = view.findViewById<ImageButton>(R.id.orangeBtn)
 
         val uploadBtn = view.findViewById<Button>(R.id.uploadBtn)
 
-        whiteBtn.setOnClickListener {
+        clearBtn.setOnClickListener {
             paintBrush.color = Color.WHITE //erase
             currentColor(paintBrush.color)
             pathList.clear()
             colorList.clear()
             path.reset()
+        }
+
+        eraseBtn.setOnClickListener {
+            paintBrush.color = Color.WHITE
+            currentColor(paintBrush.color)
         }
 
         blackBtn.setOnClickListener {
@@ -67,17 +76,32 @@ class DrawingFragment : Fragment() {
         }
 
         redBtn.setOnClickListener {
-            paintBrush.color = Color.RED
+            paintBrush.color = Color.rgb(244, 67, 54)
             currentColor(paintBrush.color)
         }
 
         greenBtn.setOnClickListener {
-            paintBrush.color = Color.GREEN
+            paintBrush.color = Color.rgb(76, 175, 80)
             currentColor(paintBrush.color)
         }
 
         blueBtn.setOnClickListener {
-            paintBrush.color = Color.BLUE
+            paintBrush.color = Color.rgb(33, 150, 243)
+            currentColor(paintBrush.color)
+        }
+
+        yellowBtn.setOnClickListener {
+            paintBrush.color = Color.rgb(239, 215, 123)
+            currentColor(paintBrush.color)
+        }
+
+        orangeBtn.setOnClickListener {
+            paintBrush.color = Color.rgb(255, 98, 0)
+            currentColor(paintBrush.color)
+        }
+
+        purpleBtn.setOnClickListener {
+            paintBrush.color = Color.rgb(78,17,88)
             currentColor(paintBrush.color)
         }
 

@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.drawToBitmap
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.mihad.artistblock.R
@@ -84,7 +85,9 @@ class SettingsFragment : Fragment() {
         if (currUser != null) {
             tvUsernameCurrent.text = currUser.username
 
-            tvAboutMeCurr.text = currUser.get("aboutMe").toString()
+            if (currUser.get("aboutMe") != null) {
+                tvAboutMeCurr.text = currUser.get("aboutMe").toString()
+            }
 
             if(currUser.getParseFile("profilePic")?.url != null) {
                 context?.let {

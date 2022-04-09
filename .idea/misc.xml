@@ -21,7 +21,11 @@
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/bg_gradient.xml" value="0.1" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/bubble.xml" value="0.1" />
+        <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/green_background.xml" value="0.2005" />
+        <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/orange_background.xml" value="0.185" />
+        <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/purple_background.xml" value="0.113" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/splash_background.xml" value="0.12" />
+        <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/drawable/yellow_background.xml" value="0.1485" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/activity_description.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -34,6 +38,7 @@
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/fragment_settings.xml" value="0.22" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/item_post.xml" value="0.1" />
+        <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/paint_view.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/layout/recyclerview_item.xml" value="0.1487603305785124" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/menu/logout.xml" value="0.2" />
         <entry key="..\:/Users/nafis/AndroidStudioProjects/ArtistBlock/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.18020833333333333" />
